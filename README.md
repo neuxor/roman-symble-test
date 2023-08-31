@@ -63,7 +63,7 @@ function romanSymbleConvertor(string $target): int
         $current = $symbles[$target[$i]];
 
         if (($i + 1) < $len && $current < $symbles[$target[$i + 1]]) {
-            // subtract with next index if next index is greater than current index
+            // subtract if next index is greater than current index
             $results -= $current;
             continue;
         }
@@ -74,9 +74,11 @@ function romanSymbleConvertor(string $target): int
     return $results;
 }
 
-echo romanSymbleConvertor('III');
+echo romanSymbleConvertor('III'); // 3
 echo PHP_EOL;
-echo romanSymbleConvertor('LVIII');
+echo romanSymbleConvertor('LVIII'); // 58
 echo PHP_EOL;
-echo romanSymbleConvertor('MCMXCIV');
+echo romanSymbleConvertor('MCMXCIV'); // 1994
+echo PHP_EOL;
+echo romanSymbleConvertor("MMDXLVI"); // 2546
 ```
